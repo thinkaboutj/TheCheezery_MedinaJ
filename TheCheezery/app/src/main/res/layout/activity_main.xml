@@ -42,6 +42,7 @@
         />
     
     <Button
+        android:id="@+id/button_get_started"
         android:layout_width="219dp"
         android:layout_height="40dp"
         android:text="@string/button_start"

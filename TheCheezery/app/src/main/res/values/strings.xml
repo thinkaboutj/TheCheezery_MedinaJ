@@ -12,10 +12,10 @@
     <string name="terms">I have read and accep terms and condition of The Cheezery</string>
     <string name="sign_in">Sign in</string>
 
-    <string name= "our_menu">Our menu</string>
+    <string name="our_menu">Our menu</string>
     <string name="cold_drinks">Cold drinks</string>
     <string name="hot_drinks">Hot drinks</string>
-    <string name ="Sweets">Sweets</string>
+    <string name="Sweets">Sweets</string>
     <string name="Salties">Salties</string>
     <string name="combos"> Combos</string>
     <string name="Custom">Custom</string>

@@ -17,15 +17,28 @@ import androidx.lifecycle.findViewTreeViewModelStoreOwner
 
 class ProductosActivity : AppCompatActivity() {
     var menu=ArrayList<Product>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_productos)
-        var menuOption:String? = intent.getStringExtra("menuType")
+
+        // Obtén la referencia de la ImageView
+        val imageView: ImageView = findViewById(R.id.Categoria)
+
+        var menuOption: String? = intent.getStringExtra("menuType")
         agregarProducto(menuOption)
 
+        // Cambia la imagen de la ImageView segub la categoría del menu
+        when (menuOption) {
+            "coldDrinks" -> imageView.setImageResource(R.drawable.colddrinks)
+            "hotDrinks" -> imageView.setImageResource(R.drawable.hotdrinks)
+            "sweets" -> imageView.setImageResource(R.drawable.sweets)
+            "salties" -> imageView.setImageResource(R.drawable.salties)
+        }
+
         var listView: ListView = findViewById(R.id.listview) as ListView
-        var adaptador : AdaptadorProductos= AdaptadorProductos(this,menu)
-        listView.adapter=adaptador
+        var adaptador: AdaptadorProductos = AdaptadorProductos(this, menu)
+        listView.adapter = adaptador
     }
 
     fun agregarProducto(option:String?){
@@ -94,6 +107,7 @@ class ProductosActivity : AppCompatActivity() {
             var prod=producto[p0]
             var inflador=LayoutInflater.from(contexto)
             var vista=inflador.inflate(R.layout.producto_view,null)
+
 
             var imagen = vista.findViewById(R.id.producto_img) as ImageView
             var nombre = vista.findViewById(R.id.producto_nombre) as TextView
